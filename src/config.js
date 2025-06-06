@@ -1,0 +1,1 @@
+export const BASEURL="https://silksew-back-1.onrender.com";

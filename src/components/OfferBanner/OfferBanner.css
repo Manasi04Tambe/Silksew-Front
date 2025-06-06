@@ -1,0 +1,175 @@
+
+.special-features-container {
+  max-width: 92%;
+  margin: 3rem auto;
+  padding: 4.5rem 2rem;
+  position: relative;
+  background: #4d0000;
+}
+
+.special-features-content {
+  position: relative;
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 260px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.icon-diamond {
+  width: 70px;
+  height: 80px;
+  font-weight: bolder;
+  background-color: #fff;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.icon-diamond:hover{
+  background-color: #f0ad4e;
+  color: whitesmoke;
+}
+.feature-item:hover .icon-diamond {
+  transform: rotate(45deg) scale(1.05);
+}
+
+.feature-icon {
+  transform: rotate(-45deg);
+  width: 38px;
+  height: 38px;
+  color: #F7DC6F;
+  font-weight: bold;
+  stroke-width: 1.5;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.connector {
+  position: absolute;
+  right: -3rem;
+  top: 45px;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.dotted-line {
+  flex-grow: 1;
+  height: 2px;
+  background-image: linear-gradient(to right, #ccc 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  transform: rotate(45deg);
+  margin-left: -5px;
+}
+
+@media (max-width: 992px) {
+  .features-list {
+    justify-content: center;
+  }
+  
+  .feature-item {
+    max-width: 400px;
+  }
+  
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .special-features-container {
+    padding: 1.5rem 1rem;
+    margin: 2rem auto;
+  }
+  
+  .feature-item {
+    min-width: 220px;
+  }
+  
+  .icon-diamond {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .feature-title {
+    font-size: 1.1rem;
+  }
+  
+  .feature-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .icon-diamond {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .feature-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+

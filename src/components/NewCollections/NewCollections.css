@@ -1,0 +1,275 @@
+.nc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nc-title {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.nc-gradient-line {
+  width: 100px;
+  height: 3px;
+  background: #333;
+  margin-bottom: 2rem;
+}
+
+.nc-carousel-container {
+  width: 100%;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Carousel Styling */
+.nc-carousel {
+  padding: 20px 0;
+}
+
+.nc-carousel-item {
+  padding: 0 10px;
+}
+
+/* Custom arrow styling */
+.react-multiple-carousel__arrow {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
+}
+
+/* Dots styling */
+.nc-carousel-dots {
+  margin-top: 20px !important;
+}
+
+.nc-carousel-dots li button {
+  border: none !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.nc-carousel-dots li.react-multi-carousel-dot--active button {
+  background: #333 !important;
+}
+
+/* Product Card Styling */
+.nc-product-card {
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+  height: 100%;
+}
+
+.nc-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.nc-product-image-container {
+  position: relative;
+  padding-top: 100%;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.nc-product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nc-just-in {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FFD814;
+  color: #000;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.nc-favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 2;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.nc-favorite-button svg {
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.nc-favorite-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.nc-product-details {
+  padding: 15px;
+  text-align: left;
+}
+
+.nc-brand-name {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.nc-product-name {
+  color: #666;
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.nc-price-container {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nc-current-price {
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nc-original-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.nc-view-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 15px;
+  background: white;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nc-view-btn:hover {
+  background: #4d0000;
+  color: white;
+  border-color: #1a1a1a;
+}
+
+.nc-loading,
+.nc-error {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .nc-carousel-container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nc-carousel-container {
+    padding: 0 10px;
+  }
+
+  .nc-product-details {
+    padding: 10px;
+  }
+
+  .nc-brand-name,
+  .nc-product-name {
+    font-size: 13px;
+  }
+
+  .nc-current-price {
+    font-size: 15px;
+  }
+
+  .nc-original-price {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nc-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .nc-carousel-container {
+    padding: 0 5px;
+  }
+
+  .nc-product-details {
+    padding: 8px;
+  }
+
+  .nc-brand-name,
+  .nc-product-name {
+    font-size: 12px;
+  }
+
+  .nc-current-price {
+    font-size: 14px;
+  }
+
+  .nc-original-price {
+    font-size: 12px;
+  }
+
+  .nc-view-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+

@@ -1,0 +1,422 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --background-color: #ecf0f1;
+  --text-color: #333;
+  --sidebar-width: 250px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background-color: #8b6f4d;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu-item {
+  margin-bottom: 15px;
+
+}
+
+.sidebar-menu-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #ecce54;
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  text-align: left;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.sidebar-menu-button:hover {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+}
+
+.sidebar-menu-button.active {
+  background-color: var(--primary-color);
+  font-weight: bold;
+}
+
+.sidebar-menu-icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 40px;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.tab-content {
+  max-height: none; /* Remove fixed height */
+  overflow: visible; 
+}
+
+
+.profile-form {
+  display: flex;
+  overflow: auto;
+  height: 400px;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.user-logo{
+  margin:auto;
+}
+
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+  /* background-color: #4caf50; */
+  color: white;
+}
+
+.submit-btn:hover {
+  /* background-color: #45a049; */
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.loading {
+  color: var(--primary-color);
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fdf1f0;
+  border: 1px solid #e74c3c;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.error h2 {
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .user-profile-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 999; */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 60px 20px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) {
+  .main-content {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+/* Toast container styles */
+.Toastify__toast-container {
+  width: 320px;
+}
+
+.Toastify__toast {
+  font-size: 14px;
+}
+
+
+/* General Styling */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+/* Profile Card */
+.profile-bg {
+  max-width: 90%; /* Responsive width */
+  width: 350px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px #000;
+}
+
+/* Profile Image */
+.profile-bg img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Social Media Section */
+.social-bg {
+  background-color: #eeeeee;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icons */
+.fa {
+  padding: 15px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Button Styling */
+.btn {
+  padding: 10px 30px;
+  margin-top: 15px;
+  background-color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #8B9EC7;
+  border: 1px solid #8B9EC7;
+}
+
+/* Content Spacing */
+.content {
+  padding: 20px;
+}
+
+.content p {
+  margin-top: 15px;
+}
+
+/* Headings */
+h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/* Small Text */
+small {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #8B9EC7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-bg {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .profile-bg img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-bg {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .profile-bg img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn {
+    padding: 6px 15px;
+    font-size: 11px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  small {
+    font-size: 11px;
+  }
+}
+
+.order-content {
+  width: 100%;
+  overflow: visible;
+}

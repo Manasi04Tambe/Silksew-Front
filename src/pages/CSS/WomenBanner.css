@@ -1,0 +1,205 @@
+.static-page-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 5%; /* Side spacing only */
+  }
+  
+  .static-page-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .static-page-image {
+    flex: 1;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: transform 0.5s ease;
+    /* Removed margin-right */
+  }
+  
+  .static-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+  
+  .static-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    background-color: #f9f9f9;
+    /* Removed margin-left */
+  }
+  
+  /* Rest of your existing CSS remains the same */
+  .static-text-content {
+    max-width: 600px;
+    color: #333;
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .static-eyebrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    color: #666;
+  }
+  
+  .static-eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.5rem;
+    height: 1px;
+    background-color: #666;
+  }
+  
+  .static-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #222;
+  }
+  
+  .static-subtitle {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    color: #555;
+  }
+  
+  .static-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .static-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4d0000;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .static-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+  }
+  
+  .static-button:hover {
+    background-color: #000;
+  }
+  
+  .static-button:hover::before {
+    left: 100%;
+  }
+  
+  .button-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .static-button:hover .button-icon {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive adaptations */
+  @media (max-width: 1024px) {
+    .static-page-container {
+      flex-direction: column;
+    }
+    
+    .static-page-image {
+      min-height: 50vh;
+    }
+    
+    .static-content {
+      padding: 4rem 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .static-title {
+      font-size: 2.5rem;
+    }
+    
+    .static-subtitle {
+      font-size: 1.5rem;
+      margin-top: 0.3rem;
+    }
+    
+    .static-description {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .static-title {
+      font-size: 2rem;
+    }
+    
+    .static-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .static-eyebrow {
+      font-size: 0.8rem;
+      padding-left: 1.5rem;
+    }
+    
+    .static-eyebrow::before {
+      width: 1rem;
+    }
+    
+    .static-content {
+      padding: 3rem 1.5rem;
+    }
+  }

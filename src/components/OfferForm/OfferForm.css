@@ -1,0 +1,60 @@
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.offer-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.offer-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.offer-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.offer-form input,
+.offer-form select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.offer-form button {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.offer-form button:hover {
+  background-color: #0056b3;
+}
