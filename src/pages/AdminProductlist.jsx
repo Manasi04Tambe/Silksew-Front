@@ -235,7 +235,7 @@ function AdminProductlist({ updateTotalProducts }) {
 
   const fetchProducts = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/products", {
+      const response = await axios.get("https://silksew-back.onrender.com/api/products", {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = Array.isArray(response.data) ? response.data : response.data.products || []
@@ -253,7 +253,7 @@ function AdminProductlist({ updateTotalProducts }) {
 
   const handleDeleteProduct = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5001/api/products/${id}`, {
+      const response = await axios.delete(`https://silksew-back.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -516,14 +516,14 @@ function AdminProductlist({ updateTotalProducts }) {
 
       let response
       if (isAdding) {
-        response = await axios.post("http://localhost:5001/api/products", productData, {
+        response = await axios.post("https://silksew-back.onrender.com/api/products", productData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         })
       } else {
-        response = await axios.put(`http://localhost:5001/api/products/${editingProduct._id}`, productData, {
+        response = await axios.put(`https://silksew-back.onrender.com/api/products/${editingProduct._id}`, productData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",

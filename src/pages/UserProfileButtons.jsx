@@ -50,7 +50,7 @@
 //         toast.error("No authentication token found. Please log in.")
 //         return
 //       }
-//       const response = await axios.get("http://localhost:5001/api/userProfileDetail/user-profile", {
+//       const response = await axios.get("https://silksew-back.onrender.com/api/userProfileDetail/user-profile", {
 //         headers: {
 //           Authorization: `Bearer ${authToken}`,
 //         },
@@ -71,7 +71,7 @@
 //         toast.error("No authentication token found. Please log in.")
 //         return
 //       }
-//       const response = await axios.get("http://localhost:5001/api/orders", {
+//       const response = await axios.get("https://silksew-back.onrender.com/api/orders", {
 //         headers: {
 //           Authorization: `Bearer ${authToken}`,
 //         },
@@ -129,7 +129,7 @@
   
 //     try {
 //       const response = await axios.put(
-//         "http://localhost:5001/api/updateUserProfileDetail/update-user-profile",
+//         "https://silksew-back.onrender.com/api/updateUserProfileDetail/update-user-profile",
 //         userData, // Send the updated state dynamically
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -372,7 +372,7 @@ const UserProfileButtons = () => {
         toast.error("No authentication token found. Please log in.")
         return
       }
-      const response = await axios.get("http://localhost:5001/api/userProfileDetail/user-profile", {
+      const response = await axios.get("https://silksew-back.onrender.com/api/userProfileDetail/user-profile", {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -395,7 +395,7 @@ const UserProfileButtons = () => {
         return
       }
       setLoadingProducts(true)
-      const response = await axios.get("http://localhost:5001/api/orders", {
+      const response = await axios.get("https://silksew-back.onrender.com/api/orders", {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -440,7 +440,7 @@ const UserProfileButtons = () => {
   
     try {
       const response = await axios.put(
-        "http://localhost:5001/api/updateUserProfileDetail/update-user-profile",
+        "https://silksew-back.onrender.com/api/updateUserProfileDetail/update-user-profile",
         userData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

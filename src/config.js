@@ -1,1 +1,1 @@
-export const BASEURL="http://localhost:5001";
+export const BASEURL="https://silksew-back.onrender.com";

@@ -21,7 +21,7 @@ const OfferForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/offer/create-offer", formData);
+      await axios.post("https://silksew-back.onrender.com/api/offer/create-offer", formData);
       alert("Offer Created Successfully!");
       setFormData({
         code: "",

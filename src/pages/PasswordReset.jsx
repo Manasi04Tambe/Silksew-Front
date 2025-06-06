@@ -9,7 +9,7 @@ export default function PasswordReset() {
     const onSubmitHandler = async (event) => {
         event.preventDefault();
 
-        const response = await fetch("http://localhost:5001/api/reset-password/sendpasswordlink", {
+        const response = await fetch("https://silksew-back.onrender.com/api/reset-password/sendpasswordlink", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

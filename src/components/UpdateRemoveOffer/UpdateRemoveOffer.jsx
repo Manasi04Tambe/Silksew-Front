@@ -13,7 +13,7 @@ function UPdateRemoveoffer() {
 
     const fetchOffers = async () => {
         try {
-            const response = await axios.get("http://localhost:5001/api/offer/get-offer");
+            const response = await axios.get("https://silksew-back.onrender.com/api/offer/get-offer");
             const fetchedOffer = response.data.offer;
             console.log("get offer", fetchedOffer);
             setOffer(Array.isArray(fetchedOffer) ? fetchedOffer : [fetchedOffer]);
@@ -42,7 +42,7 @@ function UPdateRemoveoffer() {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5001/api/offer/update-offer/${editingOffer._id}`, editingOffer);
+            await axios.put(`https://silksew-back.onrender.com/api/offer/update-offer/${editingOffer._id}`, editingOffer);
             toast.success("Offer updated successfully");
             fetchOffers();
             setEditingOffer(null);
@@ -54,7 +54,7 @@ function UPdateRemoveoffer() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5001/api/offer/delete-offer/${id}`);
+            await axios.delete(`https://silksew-back.onrender.com/api/offer/delete-offer/${id}`);
             toast.success("Offer deleted successfully");
             fetchOffers();
         } catch (error) {

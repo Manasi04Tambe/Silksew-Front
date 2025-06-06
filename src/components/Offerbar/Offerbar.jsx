@@ -43,7 +43,7 @@ export default function SaleTimer() {
   useEffect(() => {
     const fetchOffer = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/offer/get-offer");
+        const res = await axios.get("https://silksew-back.onrender.com/api/offer/get-offer");
         setOffer(res.data.offer);
         console.log("Offer response:", res.data.offer);
       } catch (err) {

@@ -37,7 +37,7 @@ const Mens = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/products")
+        const response = await axios.get("https://silksew-back.onrender.com/api/products")
         const fetchedProducts = Array.isArray(response.data) ? response.data : response.data.products
 
         const menProducts = fetchedProducts.filter((product) => product.category.includes("men"))
