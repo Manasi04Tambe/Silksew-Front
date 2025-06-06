@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { ShoppingCart, ThumbsUp, Package, Shield, Headphones } from "lucide-react";
+import { ShoppingCart, Package, Shield, Headphones } from "lucide-react";
 import "./OfferBanner.css";
 
 export default function SpecialFeatures() {

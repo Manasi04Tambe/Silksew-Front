@@ -7,10 +7,10 @@ import pintester_icon from "../Assets/pintester_icon.png"
 import whatsapp_icon from "../Assets/whatsapp_icon.png"
 
 const Footer = () => {
-  const mapStyles = {
-    height: "100%",
-    width: "100%",
-  }
+  // const mapStyles = {
+  //   height: "100%",
+  //   width: "100%",
+  // }
 
   return (
     <footer className="footer" role="contentinfo">

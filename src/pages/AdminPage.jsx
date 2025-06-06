@@ -1,4 +1,130 @@
-import { useState, useContext, useEffect } from "react"
+// import { useState, useContext, useEffect } from "react"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { useNavigate } from "react-router-dom"
+// import axios from "axios"
+// import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"
+// import "../pages/CSS/AdminPage.css"
+// import { AuthContext } from "../context/AuthContext"
+// import AdminComplaints from "../pages/AdminComplaints"
+// import ConfirmedOrder from "./ShippedOrders"
+// import AdminAddProduct from "./AdminAddProduct"
+// import AdminProductlist from "./AdminProductlist"
+// import AdminNavbar from "../components/Navbar/AdminNavbar"
+// import {
+//   faHome,
+//   faShoppingCart,
+//   faSignOutAlt,
+//   faPlus,
+//   faList,
+//   faComments,
+//   faTruck,
+//   faCheck,
+//   faUndo,
+//   faTags,
+//   faBox,
+//   faChartLine,
+//   faCheckCircle,
+//   faDollarSign
+// } from "@fortawesome/free-solid-svg-icons"
+// import AdminUser from "./AdminUser"
+// import ShippedOrders from "./ConfirmedOrders"
+// import ReturnOrderList from "../components/ReturnOrderList/ReturnOrderList"
+// import OfferForm from "../components/OfferForm/OfferForm"
+// import UPdateRemoveoffer from "../components/UpdateRemoveOffer/UpdateRemoveOffer"
+
+// const Dashboard = () => {
+//   const { token, logout } = useContext(AuthContext)
+//   const navigate = useNavigate()
+
+//   const [isSidebarOpen, setSidebarOpen] = useState(false)
+//   const [selectedOption, setSelectedOption] = useState("Dashboard")
+//   const [totalProducts, setTotalProducts] = useState(0)
+//   const [totalOrders, setTotalOrders] = useState(0)
+//   const [confirmedOrdersCount, setConfirmedOrdersCount] = useState(0)
+//   const [totalSales, setTotalSales] = useState(() => {
+//     const storedTotalSales = localStorage.getItem("totalSales")
+//     return storedTotalSales ? Number.parseFloat(storedTotalSales) : 0
+//   })
+
+//   const toggleSidebar = () => {
+//     setSidebarOpen(!isSidebarOpen)
+//   }
+
+//   const handleMenuClick = (option) => {
+//     setSelectedOption(option)
+//     setSidebarOpen(false)
+//   }
+
+//   const updateTotalProducts = (count) => {
+//     setTotalProducts(count)
+//   }
+
+//   const updateTotalOrders = (count) => {
+//     setTotalOrders(count)
+//   }
+
+//   const updateConfirmedOrdersCount = (count) => {
+//     setConfirmedOrdersCount(count)
+//   }
+
+//   const updateTotalSales = (amount) => {
+//     setTotalSales(amount)
+//     localStorage.setItem("totalSales", amount.toString())
+//   }
+
+//   const handleLogoutClick = () => {
+//     logout()
+//     navigate("/login")
+//   }
+
+//   const fetchInitialCounts = async () => {
+//     if (token) {
+//       try {
+//         const [productsResponse, ordersResponse] = await Promise.all([
+//           axios.get("https://silksew-back.onrender.com/api/products", {
+//             headers: { Authorization: `Bearer ${token}` },
+//           }),
+//           axios.get("https://silksew-back.onrender.com/api/orders", {
+//             headers: { Authorization: `Bearer ${token}` },
+//           }),
+//         ])
+
+//         const productsData = Array.isArray(productsResponse.data)
+//           ? productsResponse.data
+//           : productsResponse.data.products || []
+//         setTotalProducts(productsData.length)
+
+//         const ordersData = Array.isArray(ordersResponse.data) ? ordersResponse.data : ordersResponse.data.orders || []
+//         setTotalOrders(ordersData.length)
+
+//         let totalSales = 0
+//         let confirmedCount = 0
+//         ordersData.forEach((order) => {
+//           if (order.status === "ConfirmedOrder") {
+//             totalSales += order.totalAmount || 0
+//             confirmedCount++
+//           }
+//         })
+//         updateTotalSales(totalSales)
+//         setConfirmedOrdersCount(confirmedCount)
+//       } catch (error) {
+//         console.error("Error fetching initial counts:", error)
+//       }
+//     }
+//   }
+
+
+//   useEffect(() => {
+//     fetchInitialCounts()
+//   }, [fetchInitialCounts])
+
+//   useEffect(() => {
+//     if (!token) {
+//       navigate("/login")
+//     }
+//   }, [token, navigate])
+
+import { useState, useContext, useEffect, useCallback } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
@@ -33,7 +159,7 @@ import OfferForm from "../components/OfferForm/OfferForm"
 import UPdateRemoveoffer from "../components/UpdateRemoveOffer/UpdateRemoveOffer"
 
 const Dashboard = () => {
-  const { user, token, logout } = useContext(AuthContext)
+  const { token, logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const [isSidebarOpen, setSidebarOpen] = useState(false)
@@ -67,17 +193,17 @@ const Dashboard = () => {
     setConfirmedOrdersCount(count)
   }
 
-  const updateTotalSales = (amount) => {
+  const updateTotalSales = useCallback((amount) => {
     setTotalSales(amount)
     localStorage.setItem("totalSales", amount.toString())
-  }
+  }, [])
 
   const handleLogoutClick = () => {
     logout()
     navigate("/login")
   }
 
-  const fetchInitialCounts = async () => {
+  const fetchInitialCounts = useCallback(async () => {
     if (token) {
       try {
         const [productsResponse, ordersResponse] = await Promise.all([
@@ -111,7 +237,7 @@ const Dashboard = () => {
         console.error("Error fetching initial counts:", error)
       }
     }
-  }
+  }, [token, updateTotalSales])
 
   useEffect(() => {
     fetchInitialCounts()
@@ -250,7 +376,7 @@ const Dashboard = () => {
           }}>
             Admin Panel
           </div>
-         
+
           <div style={{
             flex: 1,
             overflowY: 'auto',
@@ -308,7 +434,7 @@ const Dashboard = () => {
                 </div>
               ))}
             </div>
-           
+
             {/* Logout Button */}
             <div
               onClick={handleLogoutClick}
@@ -585,7 +711,7 @@ const Dashboard = () => {
               </div>
             </div>
           )}
-         
+
           {selectedOption === 'AddProduct' && <AdminAddProduct />}
           {selectedOption === 'ListProducts' && (
             <AdminProductlist updateTotalProducts={updateTotalProducts} />

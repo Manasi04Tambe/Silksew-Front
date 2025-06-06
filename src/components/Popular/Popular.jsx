@@ -59,11 +59,11 @@ const Popular = () => {
     return 'https://via.placeholder.com/150'; // Default placeholder image if no valid image found
   };
 
-  const calculateDiscount = (price, oldPrice) => {
-    if (!oldPrice) return null;
-    const discount = ((oldPrice - price) / oldPrice) * 100;
-    return Math.round(discount);
-  };
+  // const calculateDiscount = (price, oldPrice) => {
+  //   if (!oldPrice) return null;
+  //   const discount = ((oldPrice - price) / oldPrice) * 100;
+  //   return Math.round(discount);
+  // };
 
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;

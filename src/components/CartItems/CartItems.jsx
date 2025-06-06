@@ -9,7 +9,7 @@ const CartItems = () => {
   const { cartItems, removeFromCart, getTotalCartAmount, products } = useContext(ShopContext);
 
   const [offerCode, setOfferCode] = useState("");
-  const [discountedTotal, setDiscountedTotal] = useState(null);
+  // const [discountedTotal, setDiscountedTotal] = useState(null);
 
   const navigate = useNavigate();
   const location = useLocation();

@@ -10,7 +10,7 @@ import "../CSS/Login.css";
 function Login({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [setError] = useState("");
 
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();

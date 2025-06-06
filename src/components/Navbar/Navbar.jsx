@@ -6,7 +6,7 @@ import { ShopContext } from "../../context/ShopContext"
 import { AuthContext } from "../../context/AuthContext"
 import logo from "../Assets/logo.png"
 import cart_icon from "../Assets/cart_icon.png"
-import { User, Menu, Bold } from "lucide-react"
+import { User, Menu} from "lucide-react"
 import "../Navbar/Navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
