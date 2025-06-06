@@ -51,7 +51,7 @@ const Navbar = ({ onLoginClick }) => {
     const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0)
     console.log("🛒 Total cart item count:", totalCount)
   }, [cartItems])
-  
+
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -81,10 +81,10 @@ const Navbar = ({ onLoginClick }) => {
   }
 
   return (
-    <nav className="navbar" style={{position:'fixed', backgroundColor:"#4d0000"}}>
+    <nav className="navbar" style={{ position: 'fixed', backgroundColor: "#4d0000" }}>
       <div className="nav-logo">
         <img src={logo || "/placeholder.svg"} alt="Logo" />
-        <Link to="/" style={{ textDecoration: "none", color: "white",marginTop: "7px" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "white", marginTop: "7px" }}>
           <p>SILKSEW</p>
         </Link>
       </div>
@@ -92,15 +92,15 @@ const Navbar = ({ onLoginClick }) => {
       <div className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`} role="navigation">
         <ul>
           <li onClick={() => handleMenuClick("Home")}>
-            <Link to="/" style={{fontWeight:"bold"}}>Home</Link>
+            <Link to="/" style={{ fontWeight: "bold" }}>Home</Link>
             {menu === "Home" && <hr />}
           </li>
           <li onClick={() => handleMenuClick("mens")}>
-            <Link to="/mens" style={{fontWeight:"bold"}}>Men</Link>
+            <Link to="/mens" style={{ fontWeight: "bold" }}>Men</Link>
             {menu === "mens" && <hr />}
           </li>
           <li onClick={() => handleMenuClick("womens")}>
-            <Link to="/womens" style={{fontWeight:"bold"}}>Women</Link>
+            <Link to="/womens" style={{ fontWeight: "bold" }}>Women</Link>
             {menu === "womens" && <hr />}
           </li>
         </ul>
@@ -128,14 +128,14 @@ const Navbar = ({ onLoginClick }) => {
                   border: 'none',
                   outline: 'none',
                   fontSize: '16px',
-                  color:"black"
+                  color: "black"
                 }}
               />
               <button
                 type="submit"
                 style={{
                   width: '50px',
-                  backgroundColor: '#febd69', 
+                  backgroundColor: '#febd69',
                   border: 'none',
                   display: 'flex',
                   alignItems: 'center',
@@ -156,7 +156,7 @@ const Navbar = ({ onLoginClick }) => {
         <div className="nav-login-cart">
           <Link to="/cart" className="cart-icon-wrapper">
             <img src={cart_icon || "/placeholder.svg"} alt="Cart" className="cart-icon" />
-            {calculateTotalCartItems() > 0 && <div className="cart-item-count" style={{color:"black"}}>{calculateTotalCartItems()}</div>}
+            {calculateTotalCartItems() > 0 && <div className="cart-item-count" style={{ color: "black" }}>{calculateTotalCartItems()}</div>}
           </Link>
 
           {user ? (
@@ -164,7 +164,11 @@ const Navbar = ({ onLoginClick }) => {
               <User className="profile-icon clickable" style={{ height: '30px' }} />
             </Link>
           ) : (
-            <Link onClick={onLoginClick} className="login-btn" style={{"backgroundColor": "#f0ad4e"}}>
+            <Link
+              onClick={onLoginClick}
+              className="login-btn transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg text-white font-semibold px-6 py-2 rounded"
+              style={{ backgroundColor: "#f0ad4e" }}
+            >
               Login
             </Link>
 
